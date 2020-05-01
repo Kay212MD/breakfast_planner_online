@@ -16,16 +16,7 @@ def personal_plans(request):
 def personal_plan(request, personal_plan_id):
     """Show all food labels and descriptions from oner personal plan"""
     personal_plan = PersonalPlan.objects.get(id=personal_plan_id)
-    food_informations = personal_plan.foodmaininformation_set.all()
-    # food_descriptions = FoodMainInformation.objects.values('food_description')
-    # Try to get food description, not only as Query
-    # food_main =FoodMainInformation.objects.all()
-    # food_description_list =[]
-    # for food_id_search in food_main:
-    #     food_id = food_id_search.id
-    #     food_id_reference = FoodMainInformation.objects.get(id=food_id)
-    #     food_description_list.append(food_id_reference.food_description)
-    #food_descriptions = FoodMainInformation.food_description
+    food_informations = personal_plan.foodmaininformation_set.all()    
     context = {'personal_plan':personal_plan, 'food_informations':food_informations}
     return render(request, 'plan/personal_plan.html', context)
 
