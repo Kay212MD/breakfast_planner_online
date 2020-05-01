@@ -1,0 +1,29 @@
+{% extends 'plan/base.html' %}
+
+{% block content %}
+
+    <h2> {{personal_plan}} </h2>
+
+    <ul> 
+        {% for food_information  in food_informations %}
+            <li><h3>{{food_information.food_label}}</h3></li>
+            <p>{{food_information.food_description}}</p>
+        {% empty %}
+            <li>No food have been added yet</li>
+        {% endfor %}
+    </ul>
+
+    <!-- <ul> 
+        {% for food_description  in food_description_list %}
+            <li>{{food_description}}</li>
+        {% empty %}
+            <li>No food have been added yet</li>
+        {% endfor %}
+    </ul>
+
+    
+
+    <p> {{food_descriptions}} </p>-->
+    
+
+{% endblock content %}
