@@ -15,4 +15,6 @@ urlpatterns = [
         name='personal_plan'),
     # Page for adding a new plan
     path('new_personal_plan', views.new_personal_plan, name='new_personal_plan'),
+    # Page for adding new food
+    path('new_food/<int:personal_plan_id>/', views.new_food, name='new_food'),
     ]
