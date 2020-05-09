@@ -19,7 +19,7 @@ class FoodMainInformation(models.Model):
     # if a reserve is necessary the creator have to input a number
     food_reserve_necessary = models.BooleanField()
     # If the value is zero, the calculated distribution factor is called
-    maximum_distribution_of_food = models.IntegerField()
+    maximum_distribution_of_food = models.IntegerField(default=0)
 
     def __str__(self):
         """Returns name of food label"""
