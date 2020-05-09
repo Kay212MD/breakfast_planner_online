@@ -4,6 +4,10 @@
 
     <h2> {{personal_plan}} </h2>
 
+    <p>
+        <a href="{% url 'plan:new_food' personal_plan.id %}">Add new Food</a>
+    </p>
+
     <ul> 
         {% for food_information  in food_informations %}
             <li><h3>{{food_information.food_label}}</h3></li>
