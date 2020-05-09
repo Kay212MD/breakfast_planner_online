@@ -1,0 +1,12 @@
+{% extends 'plan/base.html' %}
+
+{% block content %}
+    <h2> Add a new Personal Plan</h2>
+
+    <form action="{% url 'plan:new_personal_plan' %}" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button name="submit">Add Plan</button>
+    </form>
+
+{% endblock content %}
