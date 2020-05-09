@@ -1,0 +1,16 @@
+{% extends 'plan/base.html' %}
+
+{% block content %}
+    <h2> <a href="{% url 'plan:personal_plan' personal_plan.id %}"></a></h2>
+
+    <h3>Add new Food</h3>
+
+    <form action="{% url 'plan:personal_plan' personal_plan.id %}" method="post">
+        {% csrf_token %}
+        <table>
+        {{ form.as_table }}
+        </table>
+        <button name="submit">Add Food</button>
+    </form>
+
+{% endblock content %}
